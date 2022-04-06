@@ -1,10 +1,10 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
-import {default as EOL} from '../dist';
+import {describe} from 'fava';
+import detect from '../dist/index.js';
 
-/* DETECT EOL */
+/* MAIN */
 
 describe ( 'Detect EOL', it => {
 
@@ -36,7 +36,9 @@ describe ( 'Detect EOL', it => {
     ]
 
     tests.forEach ( ([ args, result ]) => {
-      t.is ( EOL ( ...args ), result );
+
+      t.is ( detect ( ...args ), result );
+
     });
 
   });

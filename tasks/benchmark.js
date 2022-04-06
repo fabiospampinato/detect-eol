@@ -1,11 +1,11 @@
 
 /* IMPORT */
 
-const {default: detectEOL} = require ( '../dist' ),
-      benchmark = require ( 'benchloop' ),
-      detectNewline = require ( 'detect-newline' );
+import benchmark from 'benchloop';
+import {detectNewline} from 'detect-newline';
+import detectEOL from '../dist/index.js';
 
-/* BENCHMARK */
+/* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
   iterations: 100000,

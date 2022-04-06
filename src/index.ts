@@ -1,15 +1,17 @@
 
-/* DETECT EOL */
+/* MAIN */
 
-function detectEOL ( str: string, fallback: string = '\n' ): string {
+//TODO: Maybe don't assume consistent newlines in the string, and return the most prominent newline in the first 1k of it or something
 
-  const index = str.indexOf ( '\n' );
+const detectEOL = ( string: string, fallback: string = '\n' ): string => {
 
-  if ( index === -1 ) return str.indexOf ( '\r' ) >= 0 ? '\r' : fallback;
+  const index = string.indexOf ( '\n' );
 
-  return str[index - 1] === '\r' ? '\r\n' : '\n';
+  if ( index === -1 ) return string.indexOf ( '\r' ) >= 0 ? '\r' : fallback;
 
-}
+  return string[index - 1] === '\r' ? '\r\n' : '\n';
+
+};
 
 /* EXPORT */
 
