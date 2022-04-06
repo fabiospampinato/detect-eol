@@ -2,7 +2,7 @@
   "name": "detect-eol",
   "repository": "github:fabiospampinato/detect-eol",
   "description": "Quickly detect the EOL used in a string.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
