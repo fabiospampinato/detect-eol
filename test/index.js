@@ -33,7 +33,7 @@ describe ( 'Detect EOL', it => {
       /* FALLBACK */
       [[''], '\n'],
       [['', 'foo'], 'foo']
-    ]
+    ];
 
     tests.forEach ( ([ args, result ]) => {
 

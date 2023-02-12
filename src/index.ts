@@ -7,9 +7,15 @@ const detectEOL = ( string: string, fallback: string = '\n' ): string => {
 
   const index = string.indexOf ( '\n' );
 
-  if ( index === -1 ) return string.indexOf ( '\r' ) >= 0 ? '\r' : fallback;
+  if ( index === -1 ) {
 
-  return string[index - 1] === '\r' ? '\r\n' : '\n';
+    return string.indexOf ( '\r' ) >= 0 ? '\r' : fallback;
+
+  } else {
+
+    return string[index - 1] === '\r' ? '\r\n' : '\n';
+
+  }
 
 };
 
