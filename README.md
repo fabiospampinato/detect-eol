@@ -2,7 +2,11 @@
 
 Quickly detect the EOL used in a string.
 
-It assumes EOLs are used consistenly, for performance, if instead you want some kind of statistical analisys you can use [detect-newline](https://www.npmjs.com/package/detect-newline), which runs about 150 times slower than this even for short strings though.
+## Features
+
+- This returns the most common type of EOL found in the string within a given window length, or the first EOL found after that, or the fallback EOL.
+- You can set the window length to 0 to just assume consistent EOLs, for maximum performance.
+- You can set the window length to Infinity to scan the entire string, for maximum accuracy.
 
 ## Install
 
@@ -12,23 +16,23 @@ npm install --save detect-eol
 
 ## Usage
 
-The function has the following shape:
+The function has the following interface:
 
 ```ts
-function ( str: string, fallback: string = '\n' ): string;
+function ( string: string, options: { fallback: string = '\n', window: number = 1024 } ): string;
 ```
 
 You can use it like this:
 
 ```ts
 import detectEOL from 'detect-eol';
-import * as OS from 'os';
+import os from 'os';
 
 detectEOL ( 'foo\nbar' ); // => '\n'
 detectEOL ( 'foo\r\nbar' ); // => '\r\n'
 detectEOL ( 'foo\rbar' ); // => '\r'
 detectEOL ( '' ); // => '\n'
-detectEOL ( '', OS.EOL ); // => OS.EOL
+detectEOL ( '', { fallback: os.EOL } ); // => os.EOL
 ```
 
 ## License

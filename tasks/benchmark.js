@@ -4,6 +4,10 @@
 import benchmark from 'benchloop';
 import detectEOL from '../dist/index.js';
 
+/* HELPERS */
+
+const SAMPLE = 'foo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\r'.repeat ( 1000 );
+
 /* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
@@ -13,6 +17,6 @@ benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
 benchmark ({
   name: 'detect-eol',
   fn: () => {
-    detectEOL ( 'foo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\rfoo\nbar\r\nbaz\r' );
+    detectEOL ( SAMPLE );
   }
 });
