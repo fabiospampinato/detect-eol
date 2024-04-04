@@ -53,3 +53,4 @@ const detectEOL = ( string: string, { fallback = '\n', window = 1024 }: Options 
 /* EXPORT */
 
 export default detectEOL;
+export type {Options};
