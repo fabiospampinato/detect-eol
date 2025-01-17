@@ -11,7 +11,7 @@ Quickly detect the EOL used in a string.
 ## Install
 
 ```sh
-npm install --save detect-eol
+npm install detect-eol
 ```
 
 ## Usage
@@ -27,6 +27,8 @@ You can use it like this:
 ```ts
 import detectEOL from 'detect-eol';
 import os from 'os';
+
+// Let's detect the EOL used in some strings
 
 detectEOL ( 'foo\nbar' ); // => '\n'
 detectEOL ( 'foo\r\nbar' ); // => '\r\n'
